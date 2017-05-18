@@ -1,0 +1,15 @@
+ html, body, #root {
+ 	height: 100%;
+ }
+ body {
+ 	font-family: 'Raleway', sans-serif;
+ 	background-color: #c2c2c2;
+ }
+ 
+ * {
+ 	box-sizing: border-box;
+ }
+ ul {
+ 	margin: 0;
+ 	padding: 0;
+ }

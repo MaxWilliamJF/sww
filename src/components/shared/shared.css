@@ -1,0 +1,22 @@
+.width-limit {
+	width: 90%;
+}
+#topo {
+	height: 52vh;
+	background: url('/img/topo.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 0 50%;
+}
+
+#titulo-topo {
+	display: flex;
+	height: 100%;
+	align-items: center;
+	margin: 0 auto;
+}
+
+#titulo-topo h1 {
+	margin: 0;
+	color: #FFF;
+}
