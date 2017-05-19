@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import './page.css';
+import './home.css';
 
-class Page extends Component {
+class Home extends Component {
     render() {
         return (
             <div id="page" className="width-limit">
-            	<h2>Page title</h2>
-            	<p>Some content</p>
+            	<h2>Home page</h2>
+            	<p>Some content goes here</p>
             </div>
         );
     }
 }
 
-export default Page;
+export default Home;

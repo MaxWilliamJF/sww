@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import axios from 'axios';
 import Topo from './components/shared/Topo';
-import Page from './components/shared/Page';
+import Main from './components/shared/Main';
 import './components/shared/shared.css';
-import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Topo />
-        <Page />
-      </div>
+      <BrowserRouter>
+        <div>
+          <Topo />
+          <Main />
+        </div>
+      </BrowserRouter>
     );
   }
 }

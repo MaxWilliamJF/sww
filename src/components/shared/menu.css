@@ -1,19 +1,22 @@
 #menu {
-	color: #FFF;
 	text-align: right;
 	margin: 0 auto;
 	padding-top: 1.2em;
 }
-
 #menu nav ul {
 	list-style: none;
 }
 #menu nav ul li {
 	display: inline-block;
+}
+#menu nav ul li a {
+	display: block;
 	padding: .4em .8em;
 	border-bottom: 2px solid transparent;
+	color: #FFF;
+	text-decoration: none;
 	transition: .2s border ease-in-out;
 }
-#menu nav ul li:hover {
+#menu nav ul li a:hover {
 	border-bottom: 2px solid #00F;
 }
