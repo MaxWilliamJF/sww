@@ -1,8 +1,17 @@
 #mainContentWrapper {
 	background-color: #FFF;
-	margin: -10vh auto 0;
+	margin: -10vh auto 2em;
 	padding: 2em 1em;
 	text-align: left;
 	min-height: 40vh;
+	line-height: 1.8;
   	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+#mainContentWrapper h1 {
+	font-size: 1.4em;
+}
+#mainContentWrapper h2 {
+	font-size: 1.2em;
+	margin-top: 2em;
 }

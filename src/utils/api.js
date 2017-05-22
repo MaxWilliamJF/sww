@@ -21,6 +21,24 @@ module.exports = {
 			})
 	},
 
+	fetchMultipleFilms: function(peopleId = []) {
+		peopleId = peopleId.map(function(x){
+			return x.replace(/http/g,"https")
+		})
+
+		var characters = peopleId.map(function(url){
+		    return axios.get(url);
+		});
+
+		return axios.all( characters )
+			.then(function (responses) {
+				return responses
+			})
+			.catch(function (error) {
+				console.error(error);
+			})
+	},
+
 	fetchPeople: function() {
 		return axios.get('https://swapi.co/api/people/')
 			.then(function(response) {
@@ -35,6 +53,24 @@ module.exports = {
 		return axios.get('https://swapi.co/api/people/'+id+'/')
 			.then(function (response) {
 				return response.data;
+			})
+			.catch(function (error) {
+				console.error(error);
+			})
+	},
+
+	fetchMultiplePeople: function(peopleId = []) {
+		peopleId = peopleId.map(function(x){
+			return x.replace(/http/g,"https")
+		})
+
+		var characters = peopleId.map(function(url){
+		    return axios.get(url);
+		});
+
+		return axios.all( characters )
+			.then(function (responses) {
+				return responses
 			})
 			.catch(function (error) {
 				console.error(error);
@@ -59,5 +95,23 @@ module.exports = {
 			.catch(function(error) {
 				console.error(error);
 			})
-	}
+	},
+
+	fetchMultipleVehicles: function(vehiclesId = []) {
+		vehiclesId = vehiclesId.map(function(x){
+			return x.replace(/http/g,"https")
+		})
+
+		var characters = vehiclesId.map(function(url){
+		    return axios.get(url);
+		});
+
+		return axios.all( characters )
+			.then(function (responses) {
+				return responses
+			})
+			.catch(function (error) {
+				console.error(error);
+			})
+	},
 }
