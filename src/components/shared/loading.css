@@ -1,0 +1,11 @@
+.loading {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.loading img {
+	display: block;
+	max-width: 120px;
+}

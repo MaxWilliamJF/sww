@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import axios from 'axios';
 import Topo from './components/shared/Topo';
 import Main from './components/shared/Main';
 import './components/shared/shared.css';

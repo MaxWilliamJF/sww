@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
+import { Switch, Route } from 'react-router-dom';
+
+import filmsList from './filmsList';
+import filmDetails from './filmDetails';
 
 class Films extends Component {
     render() {
         return (
-            <div>
-            	<h1>Films</h1>
-            </div>
+		  <Switch>
+		    <Route path='/films/:filmId' component={filmDetails}/>
+		    <Route exact path='/films' component={filmsList}/>
+		  </Switch>
         );
     }
 }
