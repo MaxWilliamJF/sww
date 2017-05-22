@@ -31,7 +31,6 @@ class vehiclesList extends Component {
     	if ( !this.state.isLoading ) {
 	    	var vehicles = this.state.vehicles.results.map(function(vehicle, i) {
 	    		var id = vehicle.url.replace('http://swapi.co/api/vehicles/', '')
-	    		console.log( id );
     			return <li key={i}>
     					<Link to={'/vehicles/'+id}>
 	    					{vehicle.name}

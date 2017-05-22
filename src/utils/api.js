@@ -2,7 +2,7 @@ const axios = require('axios');
 
 module.exports = {
 	fetchMovies: function() {
-		return axios.get('http://swapi.co/api/films/')
+		return axios.get('https://swapi.co/api/films/')
 			.then(function (response) {
 				return response.data.results;
 			})
@@ -12,7 +12,7 @@ module.exports = {
 	},
 
 	fetchMovie: function(id) {
-		return axios.get('http://swapi.co/api/films/'+id)
+		return axios.get('https://swapi.co/api/films/'+id+'/')
 			.then(function (response) {
 				return (response.data);
 			})
@@ -22,7 +22,7 @@ module.exports = {
 	},
 
 	fetchPeople: function() {
-		return axios.get('http://swapi.co/api/people/')
+		return axios.get('https://swapi.co/api/people/')
 			.then(function(response) {
 				return response.data;
 			})
@@ -32,7 +32,7 @@ module.exports = {
 	},
 
 	fetchPerson: function(id) {
-		return axios.get('http://swapi.co/api/people/'+id)
+		return axios.get('https://swapi.co/api/people/'+id+'/')
 			.then(function (response) {
 				return response.data;
 			})
@@ -42,7 +42,7 @@ module.exports = {
 	},
 
 	fetchVehicles: function() {
-		return axios.get('http://swapi.co/api/vehicles/')
+		return axios.get('https://swapi.co/api/vehicles/')
 			.then(function(response) {
 				return response.data;
 			})
@@ -52,7 +52,7 @@ module.exports = {
 	},
 
 	fetchVehicle: function(id) {
-		return axios.get('http://swapi.co/api/vehicles/'+id)
+		return axios.get('https://swapi.co/api/vehicles/'+id+'/')
 			.then(function(response) {
 				return response.data;
 			})
