@@ -4,6 +4,7 @@
  body {
  	font-family: 'Raleway', sans-serif;
  	background-color: #c2c2c2;
+ 	overflow-y: scroll;
  }
  
  * {
@@ -16,3 +17,7 @@
  ul li {
  	list-style: none;
  }
+ a {
+	text-decoration: none;
+	color: #000; 
+}

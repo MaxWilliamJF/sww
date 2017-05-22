@@ -21,16 +21,17 @@ module.exports = {
 			})
 	},
 
-	fetchMultipleFilms: function(peopleId = []) {
-		peopleId = peopleId.map(function(x){
+
+	fetchMultipleFilms: function(moviesId = []) {
+		moviesId = moviesId.map(function(x){
 			return x.replace(/http/g,"https")
 		})
 
-		var characters = peopleId.map(function(url){
+		var movies = moviesId.map(function(url) {
 		    return axios.get(url);
 		});
 
-		return axios.all( characters )
+		return axios.all( movies )
 			.then(function (responses) {
 				return responses
 			})
@@ -38,6 +39,7 @@ module.exports = {
 				console.error(error);
 			})
 	},
+
 
 	fetchPeople: function() {
 		return axios.get('https://swapi.co/api/people/')

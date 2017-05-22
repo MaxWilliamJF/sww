@@ -25,7 +25,7 @@ class vehicleDetails extends Component {
 
     componentDidUpdate() {
         if ( this.state.vehicle && !this.state.filmsItAppears.length ) {
-            Api.fetchMultipleFilms( this.state.vehicle.filmsItAppears ).then(filmsItAppears => {
+            Api.fetchMultipleFilms( this.state.vehicle.films ).then(filmsItAppears => {
                 this.setState({
                     filmsItAppears: filmsItAppears
                 })
