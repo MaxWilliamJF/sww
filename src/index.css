@@ -1,23 +1,31 @@
- html, body, #root {
- 	height: 100%;
- }
- body {
- 	font-family: 'Raleway', sans-serif;
- 	background-color: #c2c2c2;
- 	overflow-y: scroll;
- }
- 
- * {
- 	box-sizing: border-box;
- }
- ul {
- 	margin: 0;
- 	padding: 0;
- }
- ul li {
- 	list-style: none;
- }
- a {
+html, body, #root {
+	height: 100%;
+}
+body {
+	font-family: 'Raleway', sans-serif;
+	background-color: #c2c2c2;
+	overflow-y: scroll;
+}
+
+* {
+	box-sizing: border-box;
+}
+ul {
+	margin: 0;
+	padding: 0;
+}
+ul li {
+	list-style: none;
+}
+a {
 	text-decoration: none;
-	color: #000; 
+	color: #000;
+	display: block;
+}
+.btn {
+	background-color: #00F;
+	color: #FFF;
+	padding: .4em .8em;
+	border: none;
+	border-radius: 5px;
 }

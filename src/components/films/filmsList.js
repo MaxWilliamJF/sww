@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Search from './search';
 import Api from '../../utils/api.js';
 import Loading from '../shared/Loading';
+import './filmsList.css';
 
 class Films extends Component {
 	constructor(props) {
@@ -9,7 +11,8 @@ class Films extends Component {
 
 		this.state = {
 			isLoading: true,
-			films: null
+			films: null,
+			showSearch: false
 		}
 	}
 
@@ -22,7 +25,14 @@ class Films extends Component {
 		});
 	}
 
-    render() {
+
+	handleClick = () => {
+		this.setState({
+			showSearch: true
+		})
+	}
+
+	render() {
 
     	if ( this.state.isLoading ) {
     		return <Loading />
@@ -39,7 +49,11 @@ class Films extends Component {
 
 	        return (
 	            <div>
-	            	<h1>Films</h1>
+	            	<Search show={this.state.showSearch} movies={this.state.films} />
+	            	<header id="searchHeader">
+	            		<h1>Films</h1>
+	            		<button className="btn" onClick={this.handleClick}>Search</button>
+	            	</header>
 	            	<ul>{movies}</ul>
 	            </div>
 	        )
