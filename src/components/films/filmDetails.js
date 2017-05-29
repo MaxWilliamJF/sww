@@ -49,8 +49,9 @@ class filmDetails extends Component {
 
     	if ( this.state.peopleInTheMovie.length ) {
 	    	var characters = this.state.peopleInTheMovie.map(function(person, i) {
+	    		var id = person.data.url.replace('http://swapi.co/api/people/', '')
     			return <li key={i}>
-    					<Link to={'/people/'+(i+1)}>
+    					<Link to={'/people/'+id}>
 	    					{person.data.name}
     					</Link>
 					   </li>

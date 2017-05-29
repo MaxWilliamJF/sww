@@ -48,8 +48,9 @@ class Search extends Component {
 			)
 
 			var films = movies.map(function(film, i) {
+				var id = film.url.replace('http://swapi.co/api/films/', '')
 				return <li key={film.episode_id}>
-						<Link to={'/films/'+(i+1)}>{film.title}</Link>
+						<Link to={'/films/'+id}>{film.title}</Link>
 					   </li>
 			})
 		}

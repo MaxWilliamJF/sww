@@ -30,8 +30,9 @@ class peopleList extends Component {
 
     	if ( !this.state.isLoading ) {
 	    	var people = this.state.people.results.map(function(person, i) {
+                var id = person.url.replace('http://swapi.co/api/people/', '')
 				return <li key={i}>
-						<Link to={'/people/'+(i+1)}>
+						<Link to={'/people/'+id}>
 	    					{person.name}
 						</Link>
 					   </li>
