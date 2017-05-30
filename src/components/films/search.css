@@ -1,9 +1,9 @@
 #search {
-    position: fixed;
+    position: absolute;
     top: 0px;
     left: 0px;
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     background-color: rgba(0, 0, 0, 0.85);
 	transition: all 0.5s ease-in-out;
 	transform: translate(0px, -100%) scale(0, 0);
@@ -15,9 +15,9 @@
     opacity: 1;
 }
 
-#search input {
-    position: absolute;
-    top: 10%;
+#search input[type="text"] {
+    position: relative;
+    top: 10vh;
     left: 5%;
     width: 90%;
     color: rgb(255, 255, 255);
@@ -31,28 +31,76 @@
     outline: none;
 }
 
-#search button {
+#search .close {
     position: fixed;
     top: 15px;
     color: #062650;
-	background-color: #FFF;
-	border: none;
-	opacity: 1;
-	padding: .2em .4em;
-	font-size: 1em;
-    
-}
-
-#search .close {
+    background-color: #FFF;
+    border: none;
+    opacity: 1;
+    padding: .2em .4em;
+    font-size: 1em;
     left: 15px;
 }
 
 #search .filter {
-    right: 15px;
+    background-color: #03A9F4;
+}
+
+#filters-wrapper {
+    background: #FFF;
+    position: relative;
+    width: 90%;
+    left: 5%;
+    margin-bottom: 2em;
+    padding: 6px;
+    margin-top: 15vh;
+}
+
+#filters-wrapper .filter {
+    width: 100%;
+    padding: .5em 0;
+    border: 0;
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #212121;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    border-radius: 6px;
+    transition: all .3s linear;
+}
+
+input[type="checkbox"]:checked{
+    background-color: #03A9F4;
+}
+
+#filters-wrapper h3 {
+    margin: 0;
+}
+
+#filters-wrapper ul li label {
+    margin-left: 5px;
+    vertical-align: top;
+}
+
+#filters {
+    max-height: 0;
+    overflow-y: hidden;
+    transition: max-height .3s ease-in-out;
+}
+
+#filters.open {
+    max-height: 1000px;
 }
 
 #results {
-    position: absolute;
+    position: relative;
     top: 20%;
     width: 90%;
     left: 5%;
