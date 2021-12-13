@@ -1,5 +1,5 @@
 # Start Wars World
-### A simple react web app comsuming the [SWAPI API](http://swapi.co)
+### A simple react web app comsuming the [SWAPI API](http://swapi.dev)
 
 > The site is live at [starwarsworld.xyz](https://starwarsworld.xyz)
 

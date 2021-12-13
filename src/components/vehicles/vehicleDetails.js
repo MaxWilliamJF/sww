@@ -40,7 +40,7 @@ class vehicleDetails extends Component {
 
         if ( this.state.filmsItAppears.length ) {
             var films = this.state.filmsItAppears.map(function(film, i) {
-                var id = film.data.url.replace('http://swapi.co/api/films/', '')
+                var id = film.data.url.replace(Api.baseURL + '/films/', '')
                 return <li key={i}>
                         <Link to={'/films/'+id}>
                             {film.data.title}
