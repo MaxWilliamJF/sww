@@ -49,7 +49,7 @@ class filmDetails extends Component {
 
     	if ( this.state.peopleInTheMovie.length ) {
 	    	var characters = this.state.peopleInTheMovie.map(function(person, i) {
-	    		var id = person.data.url.replace('http://swapi.co/api/people/', '')
+	    		var id = person.data.url.replace(Api.baseURL + '/people/', '')
     			return <li key={i}>
     					<Link to={'/people/'+id}>
 	    					{person.data.name}
@@ -60,7 +60,7 @@ class filmDetails extends Component {
 
     	if ( this.state.vehiclesInTheMovie.length ) {
     		var vehicles = this.state.vehiclesInTheMovie.map(function(vehicle, i) {
-    			var id = vehicle.data.url.replace('http://swapi.co/api/vehicles/', '')
+    			var id = vehicle.data.url.replace(Api.baseURL + '/vehicles/', '')
     			return <li key={i}>
     					<Link to={'/vehicles/'+id}>
 	    					{vehicle.data.name}

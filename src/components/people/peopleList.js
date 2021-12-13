@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Api from '../../utils/api.js';
+import Api from '../../utils/api';
 import Loading from '../shared/Loading';
 
 class peopleList extends Component {
@@ -30,7 +30,7 @@ class peopleList extends Component {
 
     	if ( !this.state.isLoading ) {
 	    	var people = this.state.people.results.map(function(person, i) {
-                var id = person.url.replace('http://swapi.co/api/people/', '')
+                var id = person.url.replace(Api.baseURL + '/people/', '')
 				return <li key={i}>
 						<Link to={'/people/'+id}>
 	    					{person.name}

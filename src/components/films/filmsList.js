@@ -25,7 +25,6 @@ class Films extends Component {
 		});
 	}
 
-
 	handleClick = () => {
 		this.setState({
 			showSearch: true
@@ -40,7 +39,7 @@ class Films extends Component {
 
     	if ( !this.state.isLoading ) {
 	    	var movies = this.state.films.map(function(film, i) {
-	    		var id = film.url.replace('http://swapi.co/api/films/', '')
+	    		var id = film.url.replace(Api.baseURL + '/films/', '')
     			return <li key={film.episode_id}>
     					<Link to={'/films/'+id}>
 	    					{film.title}

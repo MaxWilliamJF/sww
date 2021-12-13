@@ -1,8 +1,11 @@
 const axios = require('axios');
+const baseURL = 'http://swapi.dev/api';
 
 module.exports = {
-	fetchMovies: function() {
-		return axios.get('https://swapi.co/api/films/')
+	baseURL: baseURL,
+
+	fetchMovies: function () {
+		return axios.get(baseURL + '/films/')
 			.then(function (response) {
 				return response.data.results;
 			})
@@ -11,27 +14,26 @@ module.exports = {
 			})
 	},
 
-	fetchMovie: function(id) {
-		return axios.get('https://swapi.co/api/films/'+id+'/')
+	fetchMovie: function (id) {
+		return axios.get(baseURL + '/films/' + id + '/')
 			.then(function (response) {
 				return (response.data);
 			})
-			.catch(function(error) {
+			.catch(function (error) {
 				console.error(error);
 			})
 	},
 
-
-	fetchMultipleFilms: function(moviesId = []) {
-		moviesId = moviesId.map(function(x){
-			return x.replace(/http/g,"https")
+	fetchMultipleFilms: function (moviesId = []) {
+		moviesId = moviesId.map(function (x) {
+			return x.replace(/http/g, "https")
 		})
 
-		var movies = moviesId.map(function(url) {
-		    return axios.get(url);
+		var movies = moviesId.map(function (url) {
+			return axios.get(url);
 		});
 
-		return axios.all( movies )
+		return axios.all(movies)
 			.then(function (responses) {
 				return responses
 			})
@@ -40,19 +42,8 @@ module.exports = {
 			})
 	},
 
-
-	fetchPeople: function() {
-		return axios.get('https://swapi.co/api/people/')
-			.then(function(response) {
-				return response.data;
-			})
-			.catch(function(error) {
-				console.error(error);
-			})
-	},
-
-	fetchPerson: function(id) {
-		return axios.get('https://swapi.co/api/people/'+id+'/')
+	fetchPeople: function () {
+		return axios.get(baseURL + '/people/')
 			.then(function (response) {
 				return response.data;
 			})
@@ -61,16 +52,26 @@ module.exports = {
 			})
 	},
 
-	fetchMultiplePeople: function(peopleId = []) {
-		peopleId = peopleId.map(function(x){
-			return x.replace(/http/g,"https")
+	fetchPerson: function (id) {
+		return axios.get(baseURL + '/people/' + id + '/')
+			.then(function (response) {
+				return response.data;
+			})
+			.catch(function (error) {
+				console.error(error);
+			})
+	},
+
+	fetchMultiplePeople: function (peopleId = []) {
+		peopleId = peopleId.map(function (x) {
+			return x.replace(/http/g, "https")
 		})
 
-		var characters = peopleId.map(function(url){
-		    return axios.get(url);
+		var characters = peopleId.map(function (url) {
+			return axios.get(url);
 		});
 
-		return axios.all( characters )
+		return axios.all(characters)
 			.then(function (responses) {
 				return responses
 			})
@@ -79,36 +80,36 @@ module.exports = {
 			})
 	},
 
-	fetchVehicles: function() {
-		return axios.get('https://swapi.co/api/vehicles/')
-			.then(function(response) {
+	fetchVehicles: function () {
+		return axios.get(baseURL + '/vehicles/')
+			.then(function (response) {
 				return response.data;
 			})
-			.catch(function(error) {
+			.catch(function (error) {
 				console.error(error);
 			})
 	},
 
-	fetchVehicle: function(id) {
-		return axios.get('https://swapi.co/api/vehicles/'+id+'/')
-			.then(function(response) {
+	fetchVehicle: function (id) {
+		return axios.get(baseURL + '/vehicles/' + id + '/')
+			.then(function (response) {
 				return response.data;
 			})
-			.catch(function(error) {
+			.catch(function (error) {
 				console.error(error);
 			})
 	},
 
-	fetchMultipleVehicles: function(vehiclesId = []) {
-		vehiclesId = vehiclesId.map(function(x){
-			return x.replace(/http/g,"https")
+	fetchMultipleVehicles: function (vehiclesId = []) {
+		vehiclesId = vehiclesId.map(function (x) {
+			return x.replace(/http/g, "https")
 		})
 
-		var characters = vehiclesId.map(function(url){
-		    return axios.get(url);
+		var characters = vehiclesId.map(function (url) {
+			return axios.get(url);
 		});
 
-		return axios.all( characters )
+		return axios.all(characters)
 			.then(function (responses) {
 				return responses
 			})

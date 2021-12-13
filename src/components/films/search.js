@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Api from '../../utils/api';
 import './search.css';
 
 class Search extends Component {
@@ -57,7 +58,7 @@ class Search extends Component {
 	}
 
 	renderFilms( film ) {
-		var id = film.url.replace('http://swapi.co/api/films/', '')
+		var id = film.url.replace(Api.baseURL + '/films/', '')
 		return (
 			<li key={film.episode_id}>
 				<Link to={'/films/'+id}>{film.title}</Link>
